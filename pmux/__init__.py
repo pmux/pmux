@@ -27,3 +27,11 @@ def local_pull(string_id, perform_bind):
     return LocalConnectionFactory.create_pull_sink(info)
 
 
+def local_client(string_id):
+    info = LocalConnectionInfo(string_id, False)
+    return LocalConnectionFactory.create_client_connection(info)
+
+
+def local_server(string_id):
+    info = LocalConnectionInfo(string_id, True)
+    return LocalConnectionFactory.create_server_connection(info)
